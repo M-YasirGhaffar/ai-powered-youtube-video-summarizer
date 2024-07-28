@@ -3,13 +3,13 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #0f0f0f;
 }
 
 .app {
     max-width: 100%;
-    margin: 0 auto;
+    margin: auto;
     padding: 2rem 10rem;
-    background-color: #0f0f0f;
     color: #f1f1f1;
 }
 
@@ -17,7 +17,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 }
 
 .markdown-wrapper {
@@ -27,3 +26,21 @@ body {
     border-radius: 50px;
     padding: 2rem;
 }
+
+.main-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #e3e3e3;
+  }
+
+  .loading {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #007bff;
+  }
+  
+  .error {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #ff0000;
+  }
