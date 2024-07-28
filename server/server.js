@@ -30,6 +30,7 @@ function chunkText(text) {
     }
     chunks.push(chunk);
     text = text.substr(chunk.length);
+    console.log('Chunk:', chunk);
   }
   return chunks;
 }
