@@ -48,7 +48,6 @@ const App: React.FC<AppProps> = () => {
       </div>
       {summary && (
         <div className="output-wrapper">
-            {isLoading && <div className="loading">Generating summary...</div>}
             {error && <div className="error">{error}</div>}
           <div className="markdown-wrapper">
             <ReactMarkdown>{summary}</ReactMarkdown>

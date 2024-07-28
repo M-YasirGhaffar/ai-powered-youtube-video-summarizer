@@ -6,6 +6,7 @@
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 1rem;
   }
   
   .icon-container {
@@ -66,3 +67,30 @@
     fill: #606060;
   }
   
+  
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-container {
+      max-width: 80%;
+      /* padding: 0 1rem; */
+  }
+
+  .search-input {
+      font-size: 14px;
+      padding: 6px;
+  }
+
+  .search-button {
+      /* padding: 6px 12px; */
+  }
+
+  .clear-button {
+      padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    max-width: 100%;
+  }
+}
