@@ -1,78 +1,77 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #0f0f0f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0f0f0f;
 }
 
 .app {
-    max-width: 100%;
-    margin: auto;
-    padding: 2rem 10rem;
-    color: #f1f1f1;
+  max-width: 100%;
+  margin: auto;
+  padding: 2rem 10rem;
+  color: #f1f1f1;
 }
 
 .output-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .markdown-wrapper {
-    margin: auto;
-    background: #222222;
-    margin: 1rem;
-    border-radius: 50px;
-    padding: 2rem;
+  margin: auto;
+  background: #222222;
+  margin: 1rem;
+  border-radius: 50px;
+  padding: 2rem;
 }
 
 .main-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: #e3e3e3;
-  }
+  text-align: center;
+  font-size: 2.5em;
+  color: #e3e3e3;
+}
 
-  .loading {
-    font-size: 16px;
-    color: #007bff;
-  }
-  
-  .error {
-    font-size: 16px;
-    color: #ff0000;
-  }
+.loading {
+  font-size: 16px;
+  color: #007bff;
+}
 
-  
+.error {
+  font-size: 16px;
+  color: #ff0000;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
-    .app {
-        padding: 2rem;
-    }
+  .app {
+    padding: 2rem;
+  }
 
-    .markdown-wrapper {
-        padding: 1rem;
-        margin: 0.5rem;
-        border-radius: 30px;
-    }
+  .markdown-wrapper {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+  }
 
-    .main-title {
-        font-size: 2em;
-    }
+  .main-title {
+    font-size: 2em;
+  }
 }
 
 @media (max-width: 480px) {
-    .app {
-        padding: 1rem;
-    }
+  .app {
+    padding: 1rem;
+  }
 
-    .markdown-wrapper {
-        padding: 0.5rem;
-        margin: 0.25rem;
-        border-radius: 10px;
-    }
+  .markdown-wrapper {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 10px;
+  }
 
-    .main-title {
-        font-size: 1.5em;
-    }
+  .main-title {
+    font-size: 1.5em;
+  }
 }

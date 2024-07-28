@@ -1,8 +1,8 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const { YoutubeTranscript } = require('youtube-transcript');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { YoutubeTranscript } = require("youtube-transcript");
 
 const app = express();
 app.use(express.json());
@@ -16,30 +16,30 @@ async function summarizeTranscript(transcript) {
     Create very detailed notes of the below transcript with highlighting all the important information with headings and bullet points as well, remember to keep it well formatted:\n
     ${transcript}`;
 
-    const model = genAi.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAi.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
   } catch (error) {
-    console.error('Error in summarizing transcript:', error);
+    console.error("Error in summarizing transcript:", error);
     throw error;
   }
 }
 
 async function getYouTubeTranscript(videoUrl) {
-  const videoId = new URL(videoUrl).searchParams.get('v');
+  const videoId = new URL(videoUrl).searchParams.get("v");
   if (!videoId) {
-    throw new Error('Invalid YouTube URL');
+    throw new Error("Invalid YouTube URL");
   }
   const transcript = await YoutubeTranscript.fetchTranscript(videoId);
-  return transcript.map(item => item.text).join(' ');
+  return transcript.map((item) => item.text).join(" ");
 }
 
-app.post('/api/summarize', async (req, res) => {
+app.post("/api/summarize", async (req, res) => {
   try {
     const { videoUrl } = req.body;
     if (!videoUrl) {
-      return res.status(400).json({ error: 'Video URL is required' });
+      return res.status(400).json({ error: "Video URL is required" });
     }
 
     const transcript = await getYouTubeTranscript(videoUrl);
@@ -47,8 +47,8 @@ app.post('/api/summarize', async (req, res) => {
 
     res.json({ summary });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'An error occurred during summarization' });
+    console.error("Error:", error);
+    res.status(500).json({ error: "An error occurred during summarization" });
   }
 });
 

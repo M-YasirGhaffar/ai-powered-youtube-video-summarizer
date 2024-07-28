@@ -21,7 +21,7 @@ const App: React.FC<AppProps> = () => {
     setError("");
     setSummary("");
     try {
-      const response = await axios.post("http://localhost:3000/api/summarize", {
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}`, {
         videoUrl,
       });
       setSummary(response.data.summary);
@@ -37,7 +37,6 @@ const App: React.FC<AppProps> = () => {
   return (
     <div className="app">
       <h1 className="main-title">AI-Powered YouTube Video Summarizer</h1>
-
       <div className="input-wrapper">
         <Input
           searchQuery={videoUrl}
@@ -48,7 +47,7 @@ const App: React.FC<AppProps> = () => {
       </div>
       {summary && (
         <div className="output-wrapper">
-            {error && <div className="error">{error}</div>}
+          {error && <div className="error">{error}</div>}
           <div className="markdown-wrapper">
             <ReactMarkdown>{summary}</ReactMarkdown>
           </div>
