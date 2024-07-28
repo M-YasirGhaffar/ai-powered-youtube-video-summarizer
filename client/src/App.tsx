@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ReactMarkdown from 'react-markdown';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  const summary = "## Python Object Oriented Programming Course Notes\n\n**Instructor:** Jim from JimShapeCoding\n\n**Goal:** Learn the fundamentals of Object Oriented Programming (OOP) and how to apply it in Python\n\n**Prerequisites:** Basic Python knowledge (functions, variables, if statements, for loops)\n\n**Target Audience:** Aspiring Python developers who want to learn OOP principles and best practices\n\n**Course Structure:**\n\n1. **Introduction to Object Oriented Programming**\n    * **Why OOP is essential for Software Developers:** \n        *  OOP promotes code reusability and maintainability.\n        *  It helps to organize code into logical units (objects).\n        *  OOP concepts can improve the scalability of applications.\n    * **Understanding Objects in Python:**\n        *  Data types are objects in Python.\n        *  Each object is instantiated from a class.\n    * **Creating Classes and Objects:**\n        *  **Class Definition:**\n            *  `class <class_name>:`\n            *  Includes methods (functions within a class).\n        *  **Object Instantiation:**\n            *  `object_name = <class_name>()`\n    * **Attributes (Properties of Objects):**\n        *  Assigned using dot notation: `object_name.attribute_name = value`\n        * **Instance Attributes:** Unique to each object.\n        * **Class Attributes:** Shared across all objects of a class.\n\n2. **Constructors (`__init__` Method)**\n    * **Purpose:** Initializes an object's attributes when it's created.\n    * **Syntax:**\n        *  `def __init__(self, ...):`\n    * **Benefits:**\n        *  Avoids hard-coding attribute values for each instance.\n        *  Enforces consistency by defining default values.\n    * **Key Points:**\n        *  The `self` parameter is always the first argument and represents the object itself.\n        *  Use `self.attribute_name = value` to assign attributes within the constructor.\n    * **Validating Constructor Arguments:**\n        *  Use `assert` statements to check for valid data types and values.\n        *  Provide meaningful error messages for assertion errors.\n        *  Use type hints to specify expected data types for parameters (`def some_method(self, num: int):`)\n\n3. **Methods**\n    * **Methods are functions defined within a class.**\n    * **They operate on objects and their attributes.**\n    * **Key Point:** The first argument to a method is always `self`.\n    * **Example:**\n        *  `def calculate_total_price(self):`\n            *  `return self.price * self.quantity`\n\n4. **Class Attributes**\n    * **Shared across all instances of a class.**\n    * **Defined directly within the class, outside any method.**\n    * **Example:**\n        *  `pay_rate = 0.8`\n    * **Accessing Class Attributes:**\n        *  From the class level: `<class_name>.<attribute_name>`\n        *  From an instance: `object_name.<attribute_name>`\n        *  If an attribute is not found in an instance, Python searches the class level.\n    * **Modifying Class Attributes:**\n        *  Modify the class attribute directly.\n        *  Assign a new value to the attribute on a specific instance, creating an instance attribute.\n\n5. **Object Representation (`__repr__` Method)**\n    * **Defines how an object is displayed when printed.**\n    * **Syntax:**\n        *  `def __repr__(self):`\n    * **Example:**\n        *  `return f\"Item({self.name}, {self.price}, {self.quantity})\"`\n    * **Best Practice:** Represent the object in a way that reflects its creation.\n\n6. **Class Methods**\n    * **Used to manipulate class-level data or perform actions related to the class itself.**\n    * **Decorated with `@classmethod`**.\n    * **Syntax:**\n        *  `@classmethod`\n        *  `def <method_name>(cls, ...):`\n        *  `cls` is the first parameter and represents the class itself.\n    * **Use Cases:**\n        *  Instantiating objects from structured data (CSV, JSON, YAML, etc.).\n\n7. **Static Methods**\n    * **Similar to regular functions but associated with a class.**\n    * **Decorated with `@staticmethod`**.\n    * **Syntax:**\n        *  `@staticmethod`\n        *  `def <method_name>(...):`\n    * **No access to instance or class attributes.**\n    * **Use Cases:**\n        *  Utility functions that are logically related to a class but do not require access to instances or class data.\n\n8. **Inheritance**\n    * **Creating new classes (child classes) that inherit properties and methods from existing classes (parent classes).**\n    * **Syntax:**\n        *  `class <child_class_name>(<parent_class_name>):`\n    * **Benefits:**\n        *  Code reusability.\n        *  Modeling real-world relationships (e.g., dog inherits from animal).\n    * **Constructor (`__init__`) in Child Classes:**\n        *  Call the parent class constructor using `super().__init__(...)` to initialize inherited attributes.\n        *  Add additional attributes and methods specific to the child class.\n\n9. **Encapsulation**\n    * **Restricting direct access to an object's attributes and methods.**\n    * **Achieved through private attributes and methods.**\n    * **In Python, private attributes and methods are denoted by a double underscore prefix (`__`).**\n    * **Benefits:**\n        *  Controls data integrity and prevents accidental modification.\n        *  Enforces specific access patterns through methods.\n    * **Example:**\n        *  `__price = 100`\n        *  `def __calculate_discount(self):`\n    * **Note:** While technically accessible from outside the class, it's strongly discouraged to access private attributes and methods directly.\n\n10. **Abstraction**\n    * **Hiding complex implementation details from users.**\n    * **Focuses on essential functionality and behavior.**\n    * **Achieved through abstract classes and methods.**\n    * **In Python, abstract classes and methods are defined using the `abc` module (`from abc import ABC, abstractmethod`).**\n    * **Benefits:**\n        *  Simplifies interactions with objects.\n        *  Allows for flexible implementations.\n\n11. **Polymorphism**\n    * **Using a single interface (function, method, etc.) for different objects.**\n    * **Enabled through inheritance and abstract classes.**\n    * **Example:**\n        *  The `len()` function works with different data types (strings, lists, etc.).\n    * **Benefits:**\n        *  Code flexibility and extensibility.\n        *  Allows for consistent handling of different objects.\n\n**Key OOP Principles:**\n\n* **Encapsulation:** Restricting access to data and methods to ensure data integrity and controlled modification.\n* **Abstraction:** Hiding complex implementation details from users, focusing on essential functionalities.\n* **Inheritance:** Reusing code and relationships by deriving new classes from existing ones.\n* **Polymorphism:** Allowing a single interface to work with different objects, promoting code flexibility and extensibility.\n\n**Course Summary:**\n\nThis course provides a comprehensive understanding of OOP principles and their application in Python. It covers essential concepts such as classes, objects, constructors, methods, inheritance, encapsulation, abstraction, and polymorphism. By applying these principles, developers can create well-structured, maintainable, and scalable Python applications.\n"
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App" style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>YouTube Video Summary</h1>
+      {true ? (
+        <ReactMarkdown>{summary}</ReactMarkdown>
+      ) : (
+        <p>Loading summary...</p>
+      )}
+    </div>
+  );
+};
 
-export default App
+export default App;
