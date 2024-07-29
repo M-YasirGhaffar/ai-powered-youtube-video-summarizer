@@ -35,9 +35,9 @@ const App: React.FC<AppProps> = () => {
   };
 
   return (
-    <div className="app">
-      <h1 className="main-title">AI-Powered YouTube Video Summarizer</h1>
-      <div className="input-wrapper">
+    <div className="app max-w-full mx-auto p-8 text-gray-200">
+      <h1 className="main-title text-center text-5xl text-gray-300">AI-Powered YouTube Video Summarizer</h1>
+      <div className="input-wrapper my-4">
         <Input
           searchQuery={videoUrl}
           onInputChange={handleInputChange}
@@ -46,9 +46,9 @@ const App: React.FC<AppProps> = () => {
         />
       </div>
       {summary && (
-        <div className="output-wrapper">
-          {error && <div className="error">{error}</div>}
-          <div className="markdown-wrapper">
+        <div className="output-wrapper flex justify-center items-center">
+          {error && <div className="error text-lg text-red-500">{error}</div>}
+          <div className="markdown-wrapper mx-auto bg-[#222222] my-4 p-8">
             <ReactMarkdown>{summary}</ReactMarkdown>
           </div>
         </div>
